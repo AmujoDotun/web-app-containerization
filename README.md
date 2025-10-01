@@ -24,9 +24,7 @@ This repository contains the solution for the DevOps / Cloud Engineers Assessmen
 
 ## Architectural Design
 
-The architecture is designed to be robust, scalable, and resilient, leveraging the power of AWS and Kubernetes.
-
-![Architecture Diagram](https://user-images.githubusercontent.com/1234567/123456789-abcdef.png)  <!-- Placeholder for a diagram -->
+The architecture is designed to be robust, scalable, and resilient, leveraging the power of AWS and Kubernetes. A detailed description of the architecture can be found in the responses.
 
 ### Assumptions
 
