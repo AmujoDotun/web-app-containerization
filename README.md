@@ -196,7 +196,12 @@ You will need to create an IAM role that the GitHub Actions workflow can assume.
    - Clone this repository.
    - Configure your AWS credentials.
    - Initialize and apply the Terraform configuration: `terraform init && terraform apply`.
-   - The GitHub Actions pipeline will handle subsequent deployments.
+   - **Important:** After the cluster is created, you must install the **AWS Load Balancer Controller**. This component is required for the `Ingress` resource to work and provision an Application Load Balancer. Follow the official AWS guide for this, which can be summarized as:
+     1.  Create an IAM OIDC provider for your cluster.
+     2.  Create an IAM policy and role for the AWS Load Balancer Controller.
+     3.  Install the controller using Helm.
+     You can find the detailed, up-to-date instructions here: [Install AWS Load Balancer Controller with Helm](https://docs.aws.amazon.com/eks/latest/userguide/lbc-helm.html).
+   - Once the controller is installed, the GitHub Actions pipeline will handle subsequent application deployments.
 
 ## Technology Choices
 
