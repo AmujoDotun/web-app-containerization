@@ -1,5 +1,6 @@
 # Stage 1: Build the application dependencies
-FROM python:3.9-slim as builder
+# Specify platform to ensure compatibility
+FROM --platform=linux/amd64 python:3.9-slim as builder
 
 WORKDIR /app
 
@@ -8,7 +9,7 @@ COPY app/requirements.txt .
 RUN pip wheel --no-cache-dir --wheel-dir /app/wheels -r requirements.txt
 
 # Stage 2: Create the final production image
-FROM python:3.9-slim
+FROM --platform=linux/amd64 python:3.9-slim
 
 WORKDIR /app
 
